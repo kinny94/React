@@ -1,15 +1,18 @@
-import Animal from './Animal';
+function Wizard(name, house, pet){
+    this.name = name;
+    this.house = house;
+    this.pet = pet;
 
-class Lion extends Animal{
-    constructor(name, height, color){
-        super(name, height);    //to take from the parent 
-        this.color = color;
-    }
+    this.read = () => `I'm ${this.name} from ${this.house}`;
+}
 
-    hello(){
-        console.log(`Hello, I am in inherited class. I am ${this.name}`);
-    }
-} 
+Wizard.prototype.pet_name;
+Wizard.prototype.info = function() {
+    console.log(`I have a ${this.pet} name ${this.pet_name}`)
+};
 
-let son = new Lion("Simba", 2, "golden");
-son.hello();
+let harry = new Wizard("Harry Potter", "Gryffindor", "Owl");
+harry.pet_name = "Hedwig";
+console.log(harry);
+console.log(harry.read()); 
+console.log(harry.info());
