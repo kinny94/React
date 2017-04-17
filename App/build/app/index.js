@@ -1,11 +1,11 @@
-let call = () => {
-     let secret = "ES6 Rocks";
-     let reveal = () => {
-        console.log(secret);
-     }
-     return reveal;
+const addSuffix = (x) => {
+    const concat = (y) => {
+        return y + x;
+    }
+    return concat;
 }
- 
-call(); 
-let unveil = call();
-unveil();
+
+let add_ness = addSuffix("ness");
+console.log(add_ness);
+let h = add_ness("happi");
+console.log(h);
