@@ -10,7 +10,7 @@
                             let { title, imageLinks, infoLink } = item.volumeInfo;
                             return(
                                 <a href={infoLink} target="_blank"><div className="col-md-4">
-                                    <div key={index } className="book">
+                                    <div key={index} className="book">
                                         <img 
                                             src={imageLinks !== undefined ? imageLinks.thumbnail : noImage} alt={title} className="book-img"
                                         />
