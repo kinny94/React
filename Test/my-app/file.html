@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://fb.me/react-0.13.2.js"></script>
+        <script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+        <script type="text/jsx">
+        
+            var Greeting = React.createClass({
+                
+                handleClicks: function(){
+                    alert('SUCH REACT!');
+                },
+
+                render: function(){
+                    return <h2 onClick={this.handleClicks}>HTML React</h2>;
+                       // {this.props.salutation} HTML {this.props.name};
+                }
+            });
+
+            var Greeting2 = React.createClass({
+                render: function(){
+                    return React.createElement('h2', null, 'Hello no JSX');
+                }
+            });
+
+            React.render(<Greeting name = "Michael" />, document.getElementById('root'));    
+        </script>
+    </head>
+    <body>
+        <div id="root">
+        </div>
+        <div><h2>Helo HTML</h2></div>
+    </body>
+<html>

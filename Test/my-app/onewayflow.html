@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="https://fb.me/react-0.13.2.js"></script>
+        <script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+        <script type="text/jsx">
+
+            var Flow = React.createClass({
+
+                getInitialState: function(){
+                    return {
+                        name: ""
+                    };
+                },
+
+                handleChange: function(e){
+                    this.setState({name: e.target.value})
+                },
+
+                render: function(){
+                    //Component
+                    return <div>
+                                <input type="text"onChange={this.handleChange} />
+                                <h2>Hello {this.state.name}</h2>
+                            </div>;
+                }
+            });
+
+            React.render(<Flow />, document.getElementById('root'));
+        </script>
+    </head>
+    <body>
+        <div id="root">
+        </div>
+    </body>
+<html>
