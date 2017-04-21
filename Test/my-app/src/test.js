@@ -20,6 +20,16 @@ class Test extends Component{
 
     render(){
 
+        const MyComponents = {
+            DatePicker: function(props){
+                return <div>Imagine a {props.color} datepicker here.</div>;
+            }
+        }
+
+        function BlueDatePicker() {
+            return <MyComponents.DatePicker color="blue" />;
+        }
+
         function tick() {
             const element = (
                 <div>
@@ -30,8 +40,8 @@ class Test extends Component{
         setInterval(tick, 1000);
         }
 
-        const test1 = "Dhruvin Chutiya";
-        const insideTags = <h1>Dhruvin Heading mein bhu Chutiya hai</h1>;
+        const test1 = "Testing 1";
+        const insideTags = <h1>Printing text inside regular HTML tags</h1>;
         const add = () => {
             return 2 + 1;
         }
@@ -61,7 +71,7 @@ class Test extends Component{
             <div className="container">
                 <div className="col-md-12">
                     <h2>This is my react webpage</h2>
-                    <p>/bhaiya!! Koi react sikha do!!</p>
+                    <p>Someone teach me react plss.!</p>
                     <p>{test1}</p>
                     {insideTags}   
                     <h3>2 + 3 = {add()}</h3>
@@ -69,6 +79,7 @@ class Test extends Component{
                     <h2>It is {tick()}.</h2>
                     <h4>{b}</h4>
                     <h4>{c}</h4>
+                    <h5>{BlueDatePicker()}</h5>
                     <form onSubmit={this.handleSubmit}>
                         <label>Pick your favorite La Croix flavor:
                         <select value={this.state.value} onChange={this.handleChange}>
