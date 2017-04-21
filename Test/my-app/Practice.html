@@ -9,7 +9,8 @@
                     return {
                         name: "Name",
                         clicked: 0,
-                        text: "Click on me to Change the Text!"
+                        text: "Click on me to Change the Text!",
+                        happy: true
                     };
                 },
 
@@ -35,14 +36,25 @@
                     });
                 },
 
+                handlecheckbox: function(e){
+                    this.setState({
+                        happy: e.target.checked 
+                    });
+                },
+
                 render: function(){
                     return <div>
                                 <h1>Hello</h1>
                                 <h4 onClick={this.handletextChange}>{this.state.text}</h4>
                                 <h4 onClick={this.incrementClick}>This is the number of times you clicked on me!! : {this.state.clicked}</h4>
                                 <h4 onClick={this.handleAlert}>Dont Click me otherwise I'll pop up!!</h4>
-                                <input type="text" onChange={this.handleName}/>
-                                <h4>This is what you are typing: {this.state.name}</h4>
+                                <input type="text" onChange={this.handleName} value={this.state.name}/>
+                                <input type="text" onChange={this.handleName} value={this.state.name}/>
+                                <br/>
+                                <label> Happy?
+                                <input type="checkbox" onChange={this.handlecheckbox} checked={this.state.happy}/>
+                                </label>
+                                <h4>This is what you are typing: {this.state.name}{(this.state.happy) ? "!" : ":("}</h4>
                             </div>
                 }
             });

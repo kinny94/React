@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="https://fb.me/react-0.13.2.js"></script>
+        <script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+        <script type="text/jsx">
+            var List = React.createClass({
+                render: function(){
+                    return <ul>
+                                {this.props.items.map(function (item){
+                                return <li>{item}</li>;
+                                })}
+                            </ul>;
+                }
+            });
+
+            var items = [
+                "take an Array as props",
+                "call map() on the array",
+                "for each itme, return a new list item"
+            ];
+            React.render(<List items = {items}/>, document.getElementById("root"));   
+        </script>
+    </head>
+    <body>
+        <div id="root">
+        </div>
+    </body>
+<html>
