@@ -59,25 +59,12 @@ class App extends Component {
 
 		if(this.state.showPersons){
 			persons = (
-				<div >
-					<Person 
-						name={ this.state.person[0].name } 
-						age={ this.state.person[0].age } 
-					/>
-					
-					<Person 
-						name={ this.state.person[1].name } 
-						age={ this.state.person[1].age }
-						click={ this.switchNameHandler.bind(this, 'Maximoffer')}
-						change={ this.nameChangeHandler }
-						>
-							My Hobbies : Racing
-					</Person>
-					
-					<Person 
-						name={ this.state.person[2].name } 
-						age={ this.state.person[2].age } 
-					/>	
+				<div>
+					{
+						this.state.person.map(per => {
+							return <Person name={per.name} age={per.age}/>
+						}) 
+					}
 				</div>
 			);
 		}
@@ -87,13 +74,8 @@ class App extends Component {
 				<h1>Hi, I am a react app</h1>
 				<p>This is really working!</p>
 				
-				<button
-					style={ style} 
-					onClick={this.togglePersonHandler}>Toggle Person</button>
-				
-				{
-					persons
-				}
+				<button style={ style} onClick={this.togglePersonHandler}>Toggle Person</button>
+				{persons}
 			</div>
 		);
 	}
