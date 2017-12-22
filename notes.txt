@@ -1,0 +1,1 @@
+In react, we should key to the properties to keep track of the individual elments to find out which element changed and which didn't. 
