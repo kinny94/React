@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person.js';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
 	
@@ -105,13 +105,15 @@ class App extends Component {
 		}
 
 		return (
-			<div className="App">
-				<h1>Hi, I am a react app</h1>
-				<p className={ classes.join(' ') }>This is really working.! Yes till now</p>
-				
-				<button style={style} onClick={this.togglePersonHandler}>Toggle Person</button>  
-				{persons}
-			</div>
+			<StyleRoot>
+				<div className="App">
+					<h1>Hi, I am a react app</h1>
+					<p className={ classes.join(' ') }>This is really working.! Yes till now</p>
+					
+					<button style={style} onClick={this.togglePersonHandler}>Toggle Person</button>  
+					{persons}
+				</div>
+			</StyleRoot>
 		);
 	}
 }
