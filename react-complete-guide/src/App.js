@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person.js';
 
 class App extends Component {
@@ -86,19 +85,19 @@ class App extends Component {
 			style.backgroundColor = 'red';
 		}
 
-		let classes = [];
+		const assignedClasses = [];
 		if (this.state.person.length <= 2){
-			classes.push('red'); // classes = red
+			assignedClasses.push( classes.red ); // classes = red
 		}
 
 		if(this.state.person.length <= 1){
-			classes.push('bold'); // classes are red and bold
+			assignedClasses.push( classes.bold ); // classes are red and bold
 		}
 
 		return (
-			<div className="App">
+			<div className={ classes.App }>
 				<h1>Hi, I am a react app</h1>
-				<p className={ classes.join(' ') }>This is really working.! Yes till now</p>
+				<p className={ assignedClasses.join(' ') }>This is really working.! Yes till now</p>
 				
 				<button style={style} onClick={this.togglePersonHandler}>Toggle Person</button>  
 				{persons}
