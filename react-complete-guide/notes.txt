@@ -46,3 +46,7 @@ Component Lifecycle - update (Triggered by internal change)
 * render()
 * Update Child components props
 * componentDidUpdate()
+
+Pure component is exactly the same as component but it has shouldComponeneUpdate check already built in. It will go through all the 
+properties in the props and compare them to their old versions. You should only use PureComponent if you know that updates might not be
+required. 
