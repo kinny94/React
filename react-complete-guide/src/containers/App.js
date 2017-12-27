@@ -6,18 +6,30 @@ import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
 	
+	constructor(props){
+		super(props);
+		console.log("[App.js] Inside contructor", props);
+		this.state = {
+			person: [
+				{ id: '1', name:"Max", age:28},
+				{ id: '2', name:"Manu", age: 26},
+				{ id: '3', name:"Stephanie", age: 27}
+			],
+			otherState: 'some other value',
+			showPersons: false
+		}
+	}
+
+	componentWillMount(){
+		console.log('[App.js] Inside Componenet Will mount1!');
+	}
+
+	componentDidMount(){
+		console.log('[App.js] Inside ComponentDidMount()');
+	}
 
 	//Whereas props are set and passed by outside, state is changed by inside the component.
 	// state is only provided by component and is a reserved word
-	state = {
-		person: [
-			{ id: '1', name:"Max", age:28},
-			{ id: '2', name:"Manu", age: 26},
-			{ id: '3', name:"Stephanie", age: 27}
-		],
-		otherState: 'some other value',
-		showPersons: false
-	}
 
 	nameChangeHandler = (event, id) => {
 
@@ -60,6 +72,7 @@ class App extends Component {
 
 	render() {
 
+		console.log('[App.js] inside render!');
 		let persons = null;
 
 		if(this.state.showPersons){

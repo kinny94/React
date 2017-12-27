@@ -25,3 +25,9 @@ Only available in Stateful Components.
         * componentsWillUpdate()
         * render()
         Only contructor(), componentWillMount(), componentDidMount() and render() are executed during creation
+
+The order in which the lifecycle methods are executed is
+* contructor();
+* componentsWillMount()
+* render()
+* Render child components.
