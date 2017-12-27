@@ -31,3 +31,11 @@ The order in which the lifecycle methods are executed is
 * componentsWillMount()
 * render()
 * Render child components.
+
+Component lifecycle of Updating - Steps
+* componentsWillReceiveProps(nextProps) -   Sync states to props
+* shouldComponentUpdate(nextProps, nextState) - May cancel updating components.
+* componentWillUpdate(nextProps, nextState) - if you say yes to the above steps
+* render()
+* Update child components
+* componentDidUpdate();
