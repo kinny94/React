@@ -39,3 +39,10 @@ Component lifecycle of Updating - Steps
 * render()
 * Update child components
 * componentDidUpdate();
+
+Component Lifecycle - update (Triggered by internal change)
+* shouldComponentUpdate(nextProps, nextState)
+* componentsWillUpdate()
+* render()
+* Update Child components props
+* componentDidUpdate()

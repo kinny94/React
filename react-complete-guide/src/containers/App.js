@@ -28,6 +28,19 @@ class App extends Component {
 		console.log('[App.js] Inside ComponentDidMount()');
 	}
 
+	shouldComponentUpdate(nextProps, nextState){
+        console.log('[UPDATE App.js] Inside shouldComponentUpdate()', nextProps, nextState);
+        return true; // false will stop the update
+    }
+
+    componentWillUpdate(nextProps, nextState){
+        console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
+    }
+
+    componentDidUpdate(){
+        console.log('[UPDATE App.js] Inside componentDidUpdate');
+    }
+
 	//Whereas props are set and passed by outside, state is changed by inside the component.
 	// state is only provided by component and is a reserved word
 
