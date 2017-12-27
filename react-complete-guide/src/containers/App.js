@@ -21,6 +21,10 @@ class App extends Component {
 
 	nameChangeHandler = (event, id) => {
 
+		// Create as less functional components as you can. Because these components has a clear responsibility - 
+		// They are only responsible for presenting something
+		// They mainly contain code to display jsx and their logic
+		
 		const personIndex = this.state.person.findIndex(p => {
 			return p.id === id;
 		}); 
@@ -71,7 +75,7 @@ class App extends Component {
 				<Cockpit 
 					showPersons={this.state.showPersons}
 					person={this.state.person} 
-					clicked={ this.togglePersonHandler }
+					clicked={ this .togglePersonHandler }
 				/>
 				{persons}
 			</div>
