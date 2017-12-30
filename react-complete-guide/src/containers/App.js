@@ -18,7 +18,8 @@ class App extends Component {
 				{ id: '3', name:"Stephanie", age: 27}
 			],
 			otherState: 'some other value',
-			showPersons: false
+			showPersons: false,
+			toggelClicked: 0
 		}
 	}
 
@@ -81,8 +82,20 @@ class App extends Component {
 
 	togglePersonHandler = () => {
 		const doesShow = this.state.showPersons;
-		this.setState({
- 			showPersons: !doesShow
+		/*
+			This works but The following method is the incorrect way of doing that
+				this.setState({
+				showPersons: !doesShow,
+				toggelClicked: this.state.toggelClicked + 1
+			});
+		*/
+
+		// This is the best way to change to state to rely on the previou state
+		this.setState((prevState, props) => {
+			return {
+				showPersons: !doesShow,
+				toggelClicked: prevState.toggelClicked + 1
+			}
 		});
 	}
 
