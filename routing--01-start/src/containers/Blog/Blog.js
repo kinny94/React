@@ -17,7 +17,7 @@ class Blog extends Component {
                         <ul>
                             <li><NavLink activeClassName="my-active" 
                                 activeStyle={ {color: '#fa923f', textDecoration: 'underline'} }
-                                to="/" exact>Home</NavLink></li> 
+                                to="/" exact>Posts</NavLink></li> 
                             {/* If you dont use activeClassName="active" it will be taken as default, add other class name instead 
                                 of active for custom styling.
                             */}
@@ -32,9 +32,10 @@ class Blog extends Component {
                 { /* <Route path="/" exact render={ () => <h1>Home</h1>  } />
                 <Route path="/" exact render={ () => <h1>Home 2</h1>  } /> */  }
                 
-                <Switch>    
+                <Switch>
                     <Route path="/new-post" component={ NewPost } />
-                    <Route path="/" component={ Posts } />
+                    <Route path="/" component={ Posts } />    
+                    
                 </Switch>
                 {/*
                     Order is important with Switch
