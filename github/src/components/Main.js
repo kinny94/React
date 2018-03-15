@@ -4,7 +4,7 @@ import Search from './Search';
 class Main extends Component {
     render(){
         return(
-            <div>
+            <div className="container">
                 <h1>I am from Main Class</h1>
                 <Search />
             </div>
