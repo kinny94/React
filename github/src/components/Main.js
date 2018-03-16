@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Search from './Search';
+import SearchResults from './SearchResults';
 
 class Main extends Component {
     render(){
@@ -7,6 +8,7 @@ class Main extends Component {
             <div className="container">
                 <h1>I am from Main Class</h1>
                 <Search />
+                <SearchResults />
             </div>
         )
     }
