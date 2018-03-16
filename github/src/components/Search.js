@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fetchData } from '../api/fetchData';
 
 class Search extends Component{
 
@@ -17,10 +18,16 @@ class Search extends Component{
     }
 
     handleSubmit( event ){
-        this.setState({
-            value: ''
-        });
         event.preventDefault();
+
+       this.props.handleHeading( this.state.value );    
+        
+        if( this.state.value.length > 0 ){
+            this.props.onSearch( this.state.value );
+            this.setState({
+                value: ''
+            });
+        }
     }
 
     render(){
@@ -36,9 +43,6 @@ class Search extends Component{
                         </span>
                     </div>
                 </form>
-                <div>
-                    <p>{ this.state.value }</p>
-                </div>
             </div>
         )
     }
