@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/kiiiiNNNNNNNNNyyyy/React#readme",
   "dependencies": {
-    "bcrpyt": "^2.0.0"
+    "bcrpyt": "^2.0.0",
+    "create-react-app": "^4.0.1"
   },
   "devDependencies": {
     "babel-preset-react": "^6.24.1",
