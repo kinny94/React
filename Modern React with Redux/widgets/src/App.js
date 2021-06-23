@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Accordion from './components/Accordion';
+import Dropdown from './components/Dropdown';
 import Search from './components/Search';
 
 const items = [
@@ -15,13 +16,35 @@ const items = [
         title: 'How do you use React?',
         content: 'We use react by developings components'
     }
-]
+];
+
+const options = [
+    {
+        label: 'The color red',
+        value: 'red'
+    },
+    {
+        label: 'The color green',
+        value: 'green'
+    },
+    {
+        label: 'The color blue',
+        value: 'blue'
+    }
+];
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
+
+    const [selected, setSelected] = useState(options[0]);
+    const [showDropdown, setShowDropdown] = useState(true);
+
     return (
         <div>
-            <Search></Search>
+            <button onClick={ () => setShowDropdown(!showDropdown)}>Toggle dropdown</button>
+            {
+                showDropdown ?  <Dropdown selected={ selected } options={ options } onSelectionChange={ setSelected }/>: null 
+            }
         </div>
     );
 };
