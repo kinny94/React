@@ -56,3 +56,17 @@ const policies = (listOfPolicies = [], action) => {
 
     return listOfPolicies;
 } 
+ 
+let Redux = {}; // just for testing, on codepen you will assign it to the actual redux library
+const { createStore, combineReducers } = Redux;
+
+const outDepartments = combineReducers({
+    accounting: accounting,
+    claimsHistory: claimsHistory, 
+    policies: policies
+});
+
+const store = createStore(outDepartments);
+// store.dispath();
+// store.getState()
+
