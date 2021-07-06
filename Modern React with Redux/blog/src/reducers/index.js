@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
 
 export default combineReducers({
-    replaceMe: () => "hi there!!d"
+    replaceMe: () => "hi there!!"
 });
